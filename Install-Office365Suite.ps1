@@ -112,6 +112,7 @@ if (-Not(Test-Path $OfficeInstallDownloadPath )) {
 
 if (!($ConfigurationXMLFile)) {
   Set-XMLFile
+  $ConfigurationXMLFile = "$OfficeInstallDownloadPath\OfficeInstall.xml"
 }
 else {
   if (!(Test-Path $ConfigurationXMLFile)) {
@@ -121,7 +122,6 @@ else {
   }
 }
 
-$ConfigurationXMLFile = "$OfficeInstallDownloadPath\OfficeInstall.xml"
 $ODTInstallLink = Get-ODTURL
 
 #Download the Office Deployment Tool
